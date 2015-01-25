@@ -10,7 +10,10 @@
 #import <Parse/Parse.h>
 #import "NewsfeedTableViewController.h"
 #import <RDVTabBarController/RDVTabBarController.h>
+#import "ViewController.h"
 #import "RDVTabBarItem.h"
+#import "AppConstant.h"
+#import "NewPostViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -58,7 +61,7 @@
     [self.window makeKeyAndVisible];
     
     [self customizeInterface];
-    
+    [self customizeTitle];
     return YES;
 }
 
@@ -67,15 +70,17 @@
 - (void)setupViewControllers {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
                                 @"Main" bundle:[NSBundle mainBundle]];
-    UIViewController *firstViewController = [storyboard instantiateViewControllerWithIdentifier:@"newsfeed"];//[[NewsfeedTableViewController alloc] init];
+    UIViewController *firstViewController = [storyboard instantiateViewControllerWithIdentifier:@"newsfeed"];
+    
+
     UIViewController *firstNavigationController = [[UINavigationController alloc]
                                                    initWithRootViewController:firstViewController];
     
-    UIViewController *secondViewController = [storyboard instantiateViewControllerWithIdentifier:@"newsfeed"];//[[NewsfeedTableViewController alloc] init];
+    UIViewController *secondViewController =  [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     UIViewController *secondNavigationController = [[UINavigationController alloc]
                                                     initWithRootViewController:secondViewController];
     
-    UIViewController *thirdViewController = [storyboard instantiateViewControllerWithIdentifier:@"newsfeed"];//[[NewsfeedTableViewController alloc] init];
+    UIViewController *thirdViewController = [storyboard instantiateViewControllerWithIdentifier:@"NewPost"];
     UIViewController *thirdNavigationController = [[UINavigationController alloc]
                                                    initWithRootViewController:thirdViewController];
     
@@ -135,6 +140,18 @@
     [navigationBarAppearance setTitleTextAttributes:textAttributes];
 }
 
+-(void) customizeTitle {
+    // set the title text property, color, font, size and so on
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      RGB(240,87,96),NSForegroundColorAttributeName,
+      
+      [UIFont fontWithName:@"HelveticaNeue-Regular" size:30.0], NSFontAttributeName, nil]];
+
+}
 @end
 
 

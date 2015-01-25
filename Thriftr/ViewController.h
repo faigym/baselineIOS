@@ -1,15 +1,24 @@
 //
 //  ViewController.h
-//  Thriftr
+//  SwipeViewExample
 //
-//  Created by Matan on 1/11/15.
-//  Copyright (c) 2015 Vardi. All rights reserved.
+//  Created by Nick Lockwood on 28/10/2011.
+//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "SwipeView.h"
 
-@interface ViewController : UIViewController
+
+@interface ViewController : UIViewController <SwipeViewDelegate, SwipeViewDataSource>
+
+
+
+@property (weak, nonatomic) IBOutlet SwipeView *swipeView;
+
+@property (weak, nonatomic) IBOutlet UIView *background;
+
+@property (weak, nonatomic) IBOutlet UILabel *username;
 
 
 @end
-

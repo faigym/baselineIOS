@@ -23,7 +23,16 @@
 		FE0FD9141A628F790039377F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0FD90A1A628F790039377F /* SystemConfiguration.framework */; };
 		FE0FD9181A628F8C0039377F /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0FD9161A628F8C0039377F /* ParseFacebookUtils.framework */; };
 		FE0FD9191A628F8C0039377F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0FD9171A628F8C0039377F /* ParseUI.framework */; };
+		FE13FC931A739C6900AC4400 /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE13FC921A739C6900AC4400 /* NewPostViewController.m */; };
+		FE20AD511A73811000FBE67B /* ItemDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE20AD501A73811000FBE67B /* ItemDetail.xib */; };
+		FE20AD891A739BA700FBE67B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE20AD881A739BA700FBE67B /* AVFoundation.framework */; };
+		FE20AD8B1A739BC700FBE67B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE20AD8A1A739BC700FBE67B /* CoreMotion.framework */; };
+		FE20AD8D1A739BD800FBE67B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE20AD8C1A739BD800FBE67B /* ImageIO.framework */; };
 		FE7479AB1A62923F00878EF1 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7479AA1A62923F00878EF1 /* WelcomeViewController.m */; };
+		FE911CD51A6D282600D558D3 /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE911CD41A6D282600D558D3 /* SwipeView.m */; };
+		FE911CD81A6D2A1B00D558D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE911CD71A6D2A1B00D558D3 /* ViewController.m */; };
+		FE911CDA1A6D2A6100D558D3 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE911CD91A6D2A6100D558D3 /* View.xib */; };
+		FE911CDC1A6D2F5600D558D3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE911CDB1A6D2F5600D558D3 /* ViewController.xib */; };
 		FE9612101A6CC79C00DDBEB3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE96120D1A6CC79C00DDBEB3 /* Bolts.framework */; };
 		FE9612111A6CC79C00DDBEB3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE96120E1A6CC79C00DDBEB3 /* FacebookSDK.framework */; };
 		FE9612121A6CC79C00DDBEB3 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE96120F1A6CC79C00DDBEB3 /* FBAudienceNetwork.framework */; };
@@ -33,7 +42,6 @@
 		FE9612361A6CEB2900DDBEB3 /* DetailedNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9612351A6CEB2900DDBEB3 /* DetailedNavigationController.m */; };
 		FECC8A611A627D62005B32E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FECC8A601A627D62005B32E2 /* main.m */; };
 		FECC8A641A627D62005B32E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FECC8A631A627D62005B32E2 /* AppDelegate.m */; };
-		FECC8A671A627D62005B32E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECC8A661A627D62005B32E2 /* ViewController.m */; };
 		FECC8A6A1A627D62005B32E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FECC8A681A627D62005B32E2 /* Main.storyboard */; };
 		FECC8A6C1A627D62005B32E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FECC8A6B1A627D62005B32E2 /* Images.xcassets */; };
 		FECC8A6F1A627D62005B32E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECC8A6D1A627D62005B32E2 /* LaunchScreen.xib */; };
@@ -55,10 +63,10 @@
 		7A9EC11DCE0DE71AD0DA7EDF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		82BCDF60754DC08DE8B755ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10C772C8546D2CAD44DCA70 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		FE0FD8F51A628E2F0039377F /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
-		FE0FD8F61A628E2F0039377F /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
-		FE0FD8F71A628E2F0039377F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		FE0FD8F81A628E2F0039377F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FE0FD8F51A628E2F0039377F /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignupViewController.h; path = ../SignupViewController.h; sourceTree = "<group>"; };
+		FE0FD8F61A628E2F0039377F /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignupViewController.m; path = ../SignupViewController.m; sourceTree = "<group>"; };
+		FE0FD8F71A628E2F0039377F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Thriftr/LoginViewController.h; sourceTree = SOURCE_ROOT; };
+		FE0FD8F81A628E2F0039377F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Thriftr/LoginViewController.m; sourceTree = SOURCE_ROOT; };
 		FE0FD8FF1A628F060039377F /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		FE0FD9011A628F780039377F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FE0FD9021A628F780039377F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -72,8 +80,20 @@
 		FE0FD90A1A628F790039377F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FE0FD9161A628F8C0039377F /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		FE0FD9171A628F8C0039377F /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		FE13FC911A739C6900AC4400 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
+		FE13FC921A739C6900AC4400 /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
+		FE20AD501A73811000FBE67B /* ItemDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemDetail.xib; path = ../../ItemDetail.xib; sourceTree = "<group>"; };
+		FE20AD881A739BA700FBE67B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FE20AD8A1A739BC700FBE67B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		FE20AD8C1A739BD800FBE67B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		FE7479A91A62923F00878EF1 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = SOURCE_ROOT; };
 		FE7479AA1A62923F00878EF1 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = SOURCE_ROOT; };
+		FE911CD31A6D282600D558D3 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipeView.h; path = ../SwipeView/SwipeView.h; sourceTree = "<group>"; };
+		FE911CD41A6D282600D558D3 /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwipeView.m; path = ../SwipeView/SwipeView.m; sourceTree = "<group>"; };
+		FE911CD61A6D2A1B00D558D3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		FE911CD71A6D2A1B00D558D3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
+		FE911CD91A6D2A6100D558D3 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = View.xib; path = ../View.xib; sourceTree = "<group>"; };
+		FE911CDB1A6D2F5600D558D3 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ../ViewController.xib; sourceTree = "<group>"; };
 		FE96120D1A6CC79C00DDBEB3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		FE96120E1A6CC79C00DDBEB3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		FE96120F1A6CC79C00DDBEB3 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
@@ -81,25 +101,23 @@
 		FE9612161A6CD8AF00DDBEB3 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		FE9612171A6CD8AF00DDBEB3 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		FE9612191A6CD94200DDBEB3 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
-		FE9612311A6CE68300DDBEB3 /* GKLParallaxPicturesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GKLParallaxPicturesViewController.h; path = GKLParallaxPicturesViewController/GKLParallaxPicturesViewController.h; sourceTree = "<group>"; };
-		FE9612321A6CE68800DDBEB3 /* GKLParallaxPicturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKLParallaxPicturesViewController.m; path = GKLParallaxPicturesViewController/GKLParallaxPicturesViewController.m; sourceTree = "<group>"; };
-		FE9612341A6CEB2900DDBEB3 /* DetailedNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedNavigationController.h; sourceTree = "<group>"; };
-		FE9612351A6CEB2900DDBEB3 /* DetailedNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedNavigationController.m; sourceTree = "<group>"; };
+		FE9612311A6CE68300DDBEB3 /* GKLParallaxPicturesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GKLParallaxPicturesViewController.h; path = ../GKLParallaxPicturesViewController/GKLParallaxPicturesViewController.h; sourceTree = "<group>"; };
+		FE9612321A6CE68800DDBEB3 /* GKLParallaxPicturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKLParallaxPicturesViewController.m; path = ../GKLParallaxPicturesViewController/GKLParallaxPicturesViewController.m; sourceTree = "<group>"; };
+		FE9612341A6CEB2900DDBEB3 /* DetailedNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailedNavigationController.h; path = ../DetailedNavigationController.h; sourceTree = "<group>"; };
+		FE9612351A6CEB2900DDBEB3 /* DetailedNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailedNavigationController.m; path = ../DetailedNavigationController.m; sourceTree = "<group>"; };
 		FECC8A5B1A627D62005B32E2 /* Thriftr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thriftr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECC8A5F1A627D62005B32E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FECC8A601A627D62005B32E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FECC8A621A627D62005B32E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		FECC8A631A627D62005B32E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
-		FECC8A651A627D62005B32E2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FECC8A661A627D62005B32E2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FECC8A691A627D62005B32E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FECC8A6B1A627D62005B32E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FECC8A6E1A627D62005B32E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FECC8A741A627D62005B32E2 /* ThriftrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThriftrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECC8A791A627D62005B32E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FECC8A7A1A627D62005B32E2 /* ThriftrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThriftrTests.m; sourceTree = "<group>"; };
-		FECF98641A628070008B4FB3 /* NewsfeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsfeedTableViewController.h; sourceTree = "<group>"; };
-		FECF98651A628070008B4FB3 /* NewsfeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsfeedTableViewController.m; sourceTree = "<group>"; };
+		FECF98641A628070008B4FB3 /* NewsfeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsfeedTableViewController.h; path = ../NewsfeedTableViewController.h; sourceTree = "<group>"; };
+		FECF98651A628070008B4FB3 /* NewsfeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsfeedTableViewController.m; path = ../NewsfeedTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +125,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE20AD8D1A739BD800FBE67B /* ImageIO.framework in Frameworks */,
+				FE20AD8B1A739BC700FBE67B /* CoreMotion.framework in Frameworks */,
+				FE20AD891A739BA700FBE67B /* AVFoundation.framework in Frameworks */,
 				FE0FD9181A628F8C0039377F /* ParseFacebookUtils.framework in Frameworks */,
 				FE0FD90B1A628F790039377F /* AudioToolbox.framework in Frameworks */,
 				FE0FD90C1A628F790039377F /* CFNetwork.framework in Frameworks */,
@@ -150,6 +171,9 @@
 		FE0FD9151A628F8C0039377F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE20AD8C1A739BD800FBE67B /* ImageIO.framework */,
+				FE20AD8A1A739BC700FBE67B /* CoreMotion.framework */,
+				FE20AD881A739BA700FBE67B /* AVFoundation.framework */,
 				FE9612131A6CC8AF00DDBEB3 /* Parse.framework */,
 				FE96120D1A6CC79C00DDBEB3 /* Bolts.framework */,
 				FE96120E1A6CC79C00DDBEB3 /* FacebookSDK.framework */,
@@ -171,6 +195,50 @@
 			);
 			name = Frameworks;
 			path = "../../Downloads/parse-library-1.5.0";
+			sourceTree = "<group>";
+		};
+		FE20AD561A7399EE00FBE67B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE911CD31A6D282600D558D3 /* SwipeView.h */,
+				FE911CD41A6D282600D558D3 /* SwipeView.m */,
+				FECC8A6D1A627D62005B32E2 /* LaunchScreen.xib */,
+				FECC8A681A627D62005B32E2 /* Main.storyboard */,
+				FE20AD501A73811000FBE67B /* ItemDetail.xib */,
+				FE911CDB1A6D2F5600D558D3 /* ViewController.xib */,
+				FE911CD91A6D2A6100D558D3 /* View.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FE20AD571A7399F700FBE67B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE13FC911A739C6900AC4400 /* NewPostViewController.h */,
+				FE13FC921A739C6900AC4400 /* NewPostViewController.m */,
+				FE9612341A6CEB2900DDBEB3 /* DetailedNavigationController.h */,
+				FE9612351A6CEB2900DDBEB3 /* DetailedNavigationController.m */,
+				FE911CD61A6D2A1B00D558D3 /* ViewController.h */,
+				FE911CD71A6D2A1B00D558D3 /* ViewController.m */,
+				FE9612321A6CE68800DDBEB3 /* GKLParallaxPicturesViewController.m */,
+				FE9612311A6CE68300DDBEB3 /* GKLParallaxPicturesViewController.h */,
+				FECF98641A628070008B4FB3 /* NewsfeedTableViewController.h */,
+				FECF98651A628070008B4FB3 /* NewsfeedTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FE20AD581A739A1500FBE67B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FE7479A91A62923F00878EF1 /* WelcomeViewController.h */,
+				FE7479AA1A62923F00878EF1 /* WelcomeViewController.m */,
+				FE0FD8F51A628E2F0039377F /* SignupViewController.h */,
+				FE0FD8F61A628E2F0039377F /* SignupViewController.m */,
+				FE0FD8F71A628E2F0039377F /* LoginViewController.h */,
+				FE0FD8F81A628E2F0039377F /* LoginViewController.m */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		FE9612151A6CD8AF00DDBEB3 /* Application */ = {
@@ -208,25 +276,12 @@
 		FECC8A5D1A627D62005B32E2 /* Thriftr */ = {
 			isa = PBXGroup;
 			children = (
-				FE9612321A6CE68800DDBEB3 /* GKLParallaxPicturesViewController.m */,
-				FE9612311A6CE68300DDBEB3 /* GKLParallaxPicturesViewController.h */,
+				FE20AD581A739A1500FBE67B /* Login */,
+				FE20AD571A7399F700FBE67B /* Controllers */,
+				FE20AD561A7399EE00FBE67B /* Views */,
 				FE9612151A6CD8AF00DDBEB3 /* Application */,
-				FE7479A91A62923F00878EF1 /* WelcomeViewController.h */,
-				FE7479AA1A62923F00878EF1 /* WelcomeViewController.m */,
-				FE0FD8F51A628E2F0039377F /* SignupViewController.h */,
-				FE0FD8F61A628E2F0039377F /* SignupViewController.m */,
-				FE0FD8F71A628E2F0039377F /* LoginViewController.h */,
-				FE0FD8F81A628E2F0039377F /* LoginViewController.m */,
-				FECF98641A628070008B4FB3 /* NewsfeedTableViewController.h */,
-				FECF98651A628070008B4FB3 /* NewsfeedTableViewController.m */,
-				FECC8A651A627D62005B32E2 /* ViewController.h */,
-				FECC8A661A627D62005B32E2 /* ViewController.m */,
-				FECC8A681A627D62005B32E2 /* Main.storyboard */,
 				FECC8A6B1A627D62005B32E2 /* Images.xcassets */,
-				FECC8A6D1A627D62005B32E2 /* LaunchScreen.xib */,
 				FECC8A5E1A627D62005B32E2 /* Supporting Files */,
-				FE9612341A6CEB2900DDBEB3 /* DetailedNavigationController.h */,
-				FE9612351A6CEB2900DDBEB3 /* DetailedNavigationController.m */,
 			);
 			path = Thriftr;
 			sourceTree = "<group>";
@@ -322,6 +377,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = FECC8A521A627D62005B32E2;
 			productRefGroup = FECC8A5C1A627D62005B32E2 /* Products */;
@@ -339,7 +395,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE911CDC1A6D2F5600D558D3 /* ViewController.xib in Resources */,
+				FE911CDA1A6D2A6100D558D3 /* View.xib in Resources */,
 				FECC8A6A1A627D62005B32E2 /* Main.storyboard in Resources */,
+				FE20AD511A73811000FBE67B /* ItemDetail.xib in Resources */,
 				FECC8A6F1A627D62005B32E2 /* LaunchScreen.xib in Resources */,
 				FECC8A6C1A627D62005B32E2 /* Images.xcassets in Resources */,
 			);
@@ -392,11 +451,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FECC8A671A627D62005B32E2 /* ViewController.m in Sources */,
+				FE911CD51A6D282600D558D3 /* SwipeView.m in Sources */,
 				FE9612361A6CEB2900DDBEB3 /* DetailedNavigationController.m in Sources */,
 				FECC8A641A627D62005B32E2 /* AppDelegate.m in Sources */,
 				FE0FD8FA1A628E2F0039377F /* LoginViewController.m in Sources */,
+				FE13FC931A739C6900AC4400 /* NewPostViewController.m in Sources */,
 				FECC8A611A627D62005B32E2 /* main.m in Sources */,
+				FE911CD81A6D2A1B00D558D3 /* ViewController.m in Sources */,
 				FE7479AB1A62923F00878EF1 /* WelcomeViewController.m in Sources */,
 				FE9612181A6CD8B000DDBEB3 /* NavigationController.m in Sources */,
 				FE9612331A6CE68800DDBEB3 /* GKLParallaxPicturesViewController.m in Sources */,
@@ -430,6 +491,7 @@
 				FECC8A691A627D62005B32E2 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		FECC8A6D1A627D62005B32E2 /* LaunchScreen.xib */ = {
@@ -438,6 +500,7 @@
 				FECC8A6E1A627D62005B32E2 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

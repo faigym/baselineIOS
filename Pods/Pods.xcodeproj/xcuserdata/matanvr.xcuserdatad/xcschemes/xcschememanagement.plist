@@ -4,6 +4,46 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>NBUKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GPUImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Lockbox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-MotionOrientation@PTEz.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NBUCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NBUImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NBUKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RBVolumeButtons@PTEz.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RDVTabBarController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>67D05BAAB2B384281E49CB37</key>
+		<key>1F98DF46BCC4AE1042B2128E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FF7F93B864DE532146DAA3DD</key>
+		<key>2D8CEE0D9CFA75139C238A56</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2F4046C577AA4EC3767BF85D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>42BC5A10DC9342DB75FF9775</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E4B2C4598F0DC4B6354EF26</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57D831B3E49F3B419FE84C15</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>857B9075503967E3D4357DDD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA439139E54FD2F4A0071088</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD3A673B2FA1894B939C578E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF7D3F67165880A80DEEA697</key>
 		<dict>
 			<key>primary</key>
 			<true/>

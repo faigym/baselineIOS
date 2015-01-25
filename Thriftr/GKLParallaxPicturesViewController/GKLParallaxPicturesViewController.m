@@ -256,6 +256,9 @@ static CGFloat PageControlHeight = 20.0f;
     
     // Navigation Bar Buttons
     [self.navigationItem setTitle:@"Title"];
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]}];
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
     
     _imageScroller.frame        = CGRectMake(0.0, 0.0, bounds.size.width, bounds.size.height);

@@ -1,10 +1,62 @@
 PODS:
+  - GPUImage (HEAD based on 0.1.6)
+  - Lockbox (2.1.0)
+  - MotionOrientation@PTEz (1.1.0)
+  - NBUCore (2.0.4)
+  - NBUImagePicker/Assets (1.5.2):
+    - NBUImagePicker/Base
+    - NBUKit (>= 2.4.1)
+  - NBUImagePicker/Base (1.5.2):
+    - NBUKit (>= 2.4.1)
+  - NBUImagePicker/Camera (1.5.2):
+    - NBUImagePicker/Assets
+    - NBUKit (>= 2.4.1)
+    - RBVolumeButtons@PTEz
+  - NBUKit (2.4.1):
+    - Lockbox (>= 1.4.6)
+    - NBUCore (>= 2.0.3)
+    - NBUKit/Additions (= 2.4.1)
+    - NBUKit/Base (= 2.4.1)
+    - NBUKit/Library (= 2.4.1)
+    - NBUKit/UI (= 2.4.1)
+  - NBUKit/Additions (2.4.1):
+    - Lockbox (>= 1.4.6)
+    - NBUCore (>= 2.0.3)
+    - NBUKit/Base
+  - NBUKit/Base (2.4.1):
+    - Lockbox (>= 1.4.6)
+    - NBUCore (>= 2.0.3)
+  - NBUKit/Library (2.4.1):
+    - Lockbox (>= 1.4.6)
+    - NBUCore (>= 2.0.3)
+    - NBUKit/Base
+    - NBUKit/Library/RestKitSupport (= 2.4.1)
+  - NBUKit/Library/RestKitSupport (2.4.1):
+    - Lockbox (>= 1.4.6)
+    - NBUCore (>= 2.0.3)
+    - NBUKit/Base
+  - NBUKit/UI (2.4.1):
+    - Lockbox (>= 1.4.6)
+    - MotionOrientation@PTEz (>= 1.1.0)
+    - NBUCore (>= 2.0.3)
+    - NBUKit/Additions
+    - NBUKit/Library/RestKitSupport
+  - RBVolumeButtons@PTEz (0.1.1)
   - RDVTabBarController (1.1.9)
 
 DEPENDENCIES:
+  - GPUImage (HEAD)
+  - NBUImagePicker/Camera
   - RDVTabBarController
 
 SPEC CHECKSUMS:
+  GPUImage: cecb0830bb9428f50192042e3c7b53810f51388e
+  Lockbox: 3168f08cb26680b05a0702b8c0cc6da32788059d
+  MotionOrientation@PTEz: ec58ced639faa14d30e63db9ef5cba8ded38b3b5
+  NBUCore: 978f24fdc8d79dc8141032bf0121053e3b25c95c
+  NBUImagePicker: 11ac9d9bfa4169601c21442f3fc07d94925d05b1
+  NBUKit: d6fbebbdaff12d51f21c465bfb3e8b2efed7b19f
+  RBVolumeButtons@PTEz: 1c6acd04d062690543daee226c9b8ac5ffbdcaf1
   RDVTabBarController: c1c826e2d2f2e26a5221e425a646d295b9dfe936
 
 COCOAPODS: 0.35.0
