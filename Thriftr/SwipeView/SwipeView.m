@@ -98,7 +98,7 @@
     _delaysContentTouches = YES;
     _bounces = YES;
     _wrapEnabled = NO;
-    _itemsPerPage = 1.0;
+    _itemsPerPage = 3.0;
     _truncateFinalPage = NO;
     _defersItemViewLoading = NO;
     _vertical = NO;

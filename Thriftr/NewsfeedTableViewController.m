@@ -11,7 +11,7 @@
 #import "WelcomeViewController.h"
 #import "NavigationController.h"
 #import "GKLParallaxPicturesViewController.h"
-#import "DetailedNavigationController.h"
+
 
 @interface NewsfeedTableViewController ()
 
@@ -96,7 +96,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     GKLParallaxPicturesViewController *paralaxViewController = [[GKLParallaxPicturesViewController alloc] initWithImages:images
                                                                                                        andContentView:parentView];
-    DetailedNavigationController *navigationController = [[DetailedNavigationController alloc] initWithRootViewController:paralaxViewController];
+    NavigationController *navigationController = [[NavigationController alloc] initWithRootViewController:paralaxViewController];
     
     [self presentViewController:navigationController animated:YES completion:nil];
     

@@ -7,7 +7,7 @@
 //
 
 #import "GKLParallaxPicturesViewController.h"
-
+#import "AppConstant.h"
 @interface GKLParallaxPicturesViewController () <UIScrollViewDelegate>
 
 //NSMutableArray  *_imageViews;
@@ -31,8 +31,8 @@
 
 @implementation GKLParallaxPicturesViewController
 
-static CGFloat WindowHeight = 200.0;
-static CGFloat ImageHeight  = 200;
+static CGFloat WindowHeight = 390.0;
+static CGFloat ImageHeight  = 390;
 static CGFloat PageControlHeight = 20.0f;
 
 - (id)initWithImages:(NSArray *)images andcontentObject:(id)content {
@@ -257,9 +257,24 @@ static CGFloat PageControlHeight = 20.0f;
     // Navigation Bar Buttons
     [self.navigationItem setTitle:@"Title"];
     [self.navigationController.navigationBar
-     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]}];
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Contact" style:UIBarButtonSystemItemDone target:self action:nil];
+    
+    
+    //Tool bar
+    self.navigationController.toolbarHidden=NO;
+    [self.navigationController.toolbar setBarTintColor:RGB(240,87,96)];
+    [self.navigationController.toolbar setTintColor:[UIColor whiteColor]];
+    UIBarButtonItem *button1 = [[UIBarButtonItem alloc] initWithTitle:@"Contact" style:UIBarButtonItemStyleDone target:self action:@selector(sendAction)];
+    UIBarButtonItem *flexButtonLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        UIBarButtonItem *flexButtonRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    /*UIBarButtonItem *doneButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButton)];*/
+    
+    NSArray *itemsArray = [NSArray arrayWithObjects:flexButtonLeft,button1,flexButtonRight, nil];
+    [self setToolbarItems:itemsArray];
+
     
     _imageScroller.frame        = CGRectMake(0.0, 0.0, bounds.size.width, bounds.size.height);
     _transparentScroller.frame  = CGRectMake(0.0, 0.0, bounds.size.width, WindowHeight);

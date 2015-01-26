@@ -20,5 +20,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *username;
 
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+@property (weak, nonatomic) IBOutlet UILabel *price;
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 @end

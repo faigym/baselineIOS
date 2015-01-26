@@ -7,14 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <NBUImagePicker/NBUCameraViewController.h>
-#import "ObjectSlideView.h"
-#import "UIImage+NBUAdditions.h"
-@interface NewPostViewController : NBUCameraViewController
 
-@property (weak, nonatomic) IBOutlet ObjectSlideView *slideView;
+@interface NewPostViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton *shootButton;
-
-- (IBAction)customToggleFlash:(id)sender;
 @end

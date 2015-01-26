@@ -13,7 +13,6 @@
 #import "ViewController.h"
 #import "RDVTabBarItem.h"
 #import "AppConstant.h"
-#import "NewPostViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -98,7 +97,7 @@
     
     NSInteger index = 0;
     for (RDVTabBarItem *item in [[tabBarController tabBar] items]) {
-        [item setBackgroundSelectedImage:finishedImage withUnselectedImage:unfinishedImage];
+        [item setBackgroundSelectedImage:unfinishedImage withUnselectedImage:unfinishedImage];
         UIImage *selectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_selected",
                                                       [tabBarItemImages objectAtIndex:index]]];
         UIImage *unselectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_normal",
@@ -145,11 +144,10 @@
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 1);
-    [[UINavigationBar appearance] setTitleTextAttributes:
+    //  RGB(240,87,96),NSForegroundColorAttributeName,
+    /*[[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      RGB(240,87,96),NSForegroundColorAttributeName,
-      
-      [UIFont fontWithName:@"HelveticaNeue-Regular" size:30.0], NSFontAttributeName, nil]];
+      [UIFont fontWithName:@"HelveticaNeue-Light" size:28.0], NSFontAttributeName, nil]];*/
 
 }
 @end

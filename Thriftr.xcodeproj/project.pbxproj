@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DBC8F6D7D5117698C03DC7AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BCDF60754DC08DE8B755ED /* libPods.a */; };
-		FE0FD8F91A628E2F0039377F /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0FD8F61A628E2F0039377F /* SignupViewController.m */; };
 		FE0FD8FA1A628E2F0039377F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0FD8F81A628E2F0039377F /* LoginViewController.m */; };
 		FE0FD9001A628F060039377F /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0FD8FF1A628F060039377F /* ParseFacebookUtils.framework */; };
 		FE0FD90B1A628F790039377F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0FD9011A628F780039377F /* AudioToolbox.framework */; };
@@ -23,12 +22,13 @@
 		FE0FD9141A628F790039377F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0FD90A1A628F790039377F /* SystemConfiguration.framework */; };
 		FE0FD9181A628F8C0039377F /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0FD9161A628F8C0039377F /* ParseFacebookUtils.framework */; };
 		FE0FD9191A628F8C0039377F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0FD9171A628F8C0039377F /* ParseUI.framework */; };
-		FE13FC931A739C6900AC4400 /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE13FC921A739C6900AC4400 /* NewPostViewController.m */; };
 		FE20AD511A73811000FBE67B /* ItemDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE20AD501A73811000FBE67B /* ItemDetail.xib */; };
 		FE20AD891A739BA700FBE67B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE20AD881A739BA700FBE67B /* AVFoundation.framework */; };
 		FE20AD8B1A739BC700FBE67B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE20AD8A1A739BC700FBE67B /* CoreMotion.framework */; };
 		FE20AD8D1A739BD800FBE67B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE20AD8C1A739BD800FBE67B /* ImageIO.framework */; };
+		FE6368DB1A74721B00BAD7EA /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6368DA1A74721B00BAD7EA /* SignupViewController.m */; };
 		FE7479AB1A62923F00878EF1 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7479AA1A62923F00878EF1 /* WelcomeViewController.m */; };
+		FE8E4DD41A756BCB00CCEBF5 /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8E4DD31A756BCB00CCEBF5 /* NewPostViewController.m */; };
 		FE911CD51A6D282600D558D3 /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE911CD41A6D282600D558D3 /* SwipeView.m */; };
 		FE911CD81A6D2A1B00D558D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE911CD71A6D2A1B00D558D3 /* ViewController.m */; };
 		FE911CDA1A6D2A6100D558D3 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE911CD91A6D2A6100D558D3 /* View.xib */; };
@@ -39,7 +39,6 @@
 		FE9612141A6CC8AF00DDBEB3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9612131A6CC8AF00DDBEB3 /* Parse.framework */; };
 		FE9612181A6CD8B000DDBEB3 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9612171A6CD8AF00DDBEB3 /* NavigationController.m */; };
 		FE9612331A6CE68800DDBEB3 /* GKLParallaxPicturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9612321A6CE68800DDBEB3 /* GKLParallaxPicturesViewController.m */; };
-		FE9612361A6CEB2900DDBEB3 /* DetailedNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9612351A6CEB2900DDBEB3 /* DetailedNavigationController.m */; };
 		FECC8A611A627D62005B32E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FECC8A601A627D62005B32E2 /* main.m */; };
 		FECC8A641A627D62005B32E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FECC8A631A627D62005B32E2 /* AppDelegate.m */; };
 		FECC8A6A1A627D62005B32E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FECC8A681A627D62005B32E2 /* Main.storyboard */; };
@@ -63,8 +62,6 @@
 		7A9EC11DCE0DE71AD0DA7EDF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		82BCDF60754DC08DE8B755ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10C772C8546D2CAD44DCA70 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		FE0FD8F51A628E2F0039377F /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignupViewController.h; path = ../SignupViewController.h; sourceTree = "<group>"; };
-		FE0FD8F61A628E2F0039377F /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignupViewController.m; path = ../SignupViewController.m; sourceTree = "<group>"; };
 		FE0FD8F71A628E2F0039377F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Thriftr/LoginViewController.h; sourceTree = SOURCE_ROOT; };
 		FE0FD8F81A628E2F0039377F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Thriftr/LoginViewController.m; sourceTree = SOURCE_ROOT; };
 		FE0FD8FF1A628F060039377F /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -80,14 +77,16 @@
 		FE0FD90A1A628F790039377F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FE0FD9161A628F8C0039377F /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		FE0FD9171A628F8C0039377F /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		FE13FC911A739C6900AC4400 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
-		FE13FC921A739C6900AC4400 /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 		FE20AD501A73811000FBE67B /* ItemDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemDetail.xib; path = ../../ItemDetail.xib; sourceTree = "<group>"; };
 		FE20AD881A739BA700FBE67B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FE20AD8A1A739BC700FBE67B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		FE20AD8C1A739BD800FBE67B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		FE6368D91A74721B00BAD7EA /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		FE6368DA1A74721B00BAD7EA /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		FE7479A91A62923F00878EF1 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = SOURCE_ROOT; };
 		FE7479AA1A62923F00878EF1 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = SOURCE_ROOT; };
+		FE8E4DD21A756BCB00CCEBF5 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
+		FE8E4DD31A756BCB00CCEBF5 /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 		FE911CD31A6D282600D558D3 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipeView.h; path = ../SwipeView/SwipeView.h; sourceTree = "<group>"; };
 		FE911CD41A6D282600D558D3 /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwipeView.m; path = ../SwipeView/SwipeView.m; sourceTree = "<group>"; };
 		FE911CD61A6D2A1B00D558D3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
@@ -103,8 +102,6 @@
 		FE9612191A6CD94200DDBEB3 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		FE9612311A6CE68300DDBEB3 /* GKLParallaxPicturesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GKLParallaxPicturesViewController.h; path = ../GKLParallaxPicturesViewController/GKLParallaxPicturesViewController.h; sourceTree = "<group>"; };
 		FE9612321A6CE68800DDBEB3 /* GKLParallaxPicturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKLParallaxPicturesViewController.m; path = ../GKLParallaxPicturesViewController/GKLParallaxPicturesViewController.m; sourceTree = "<group>"; };
-		FE9612341A6CEB2900DDBEB3 /* DetailedNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailedNavigationController.h; path = ../DetailedNavigationController.h; sourceTree = "<group>"; };
-		FE9612351A6CEB2900DDBEB3 /* DetailedNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailedNavigationController.m; path = ../DetailedNavigationController.m; sourceTree = "<group>"; };
 		FECC8A5B1A627D62005B32E2 /* Thriftr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thriftr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECC8A5F1A627D62005B32E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FECC8A601A627D62005B32E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -214,10 +211,8 @@
 		FE20AD571A7399F700FBE67B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FE13FC911A739C6900AC4400 /* NewPostViewController.h */,
-				FE13FC921A739C6900AC4400 /* NewPostViewController.m */,
-				FE9612341A6CEB2900DDBEB3 /* DetailedNavigationController.h */,
-				FE9612351A6CEB2900DDBEB3 /* DetailedNavigationController.m */,
+				FE8E4DD21A756BCB00CCEBF5 /* NewPostViewController.h */,
+				FE8E4DD31A756BCB00CCEBF5 /* NewPostViewController.m */,
 				FE911CD61A6D2A1B00D558D3 /* ViewController.h */,
 				FE911CD71A6D2A1B00D558D3 /* ViewController.m */,
 				FE9612321A6CE68800DDBEB3 /* GKLParallaxPicturesViewController.m */,
@@ -231,10 +226,10 @@
 		FE20AD581A739A1500FBE67B /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				FE6368D91A74721B00BAD7EA /* SignupViewController.h */,
+				FE6368DA1A74721B00BAD7EA /* SignupViewController.m */,
 				FE7479A91A62923F00878EF1 /* WelcomeViewController.h */,
 				FE7479AA1A62923F00878EF1 /* WelcomeViewController.m */,
-				FE0FD8F51A628E2F0039377F /* SignupViewController.h */,
-				FE0FD8F61A628E2F0039377F /* SignupViewController.m */,
 				FE0FD8F71A628E2F0039377F /* LoginViewController.h */,
 				FE0FD8F81A628E2F0039377F /* LoginViewController.m */,
 			);
@@ -452,17 +447,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE911CD51A6D282600D558D3 /* SwipeView.m in Sources */,
-				FE9612361A6CEB2900DDBEB3 /* DetailedNavigationController.m in Sources */,
 				FECC8A641A627D62005B32E2 /* AppDelegate.m in Sources */,
+				FE6368DB1A74721B00BAD7EA /* SignupViewController.m in Sources */,
+				FE8E4DD41A756BCB00CCEBF5 /* NewPostViewController.m in Sources */,
 				FE0FD8FA1A628E2F0039377F /* LoginViewController.m in Sources */,
-				FE13FC931A739C6900AC4400 /* NewPostViewController.m in Sources */,
 				FECC8A611A627D62005B32E2 /* main.m in Sources */,
 				FE911CD81A6D2A1B00D558D3 /* ViewController.m in Sources */,
 				FE7479AB1A62923F00878EF1 /* WelcomeViewController.m in Sources */,
 				FE9612181A6CD8B000DDBEB3 /* NavigationController.m in Sources */,
 				FE9612331A6CE68800DDBEB3 /* GKLParallaxPicturesViewController.m in Sources */,
 				FECF98661A628070008B4FB3 /* NewsfeedTableViewController.m in Sources */,
-				FE0FD8F91A628E2F0039377F /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
