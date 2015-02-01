@@ -16,6 +16,8 @@
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
+#define		DEFAULT_TAB                         0
+
 #define		PF_INSTALLATION_CLASS_NAME			@"_Installation"		//	Class name
 #define		PF_INSTALLATION_OBJECTID			@"objectId"				//	String
 #define		PF_INSTALLATION_USER				@"user"					//	Pointer to User Class
