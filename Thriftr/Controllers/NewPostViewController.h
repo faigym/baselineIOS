@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface NewPostViewController : UIViewController
-
+@property (nonatomic,assign) NSInteger selectedImage;
+@property (strong, atomic) NSMutableArray *selectedImages;
+@property (strong, atomic) NSMutableArray *modifyImages;
 @end

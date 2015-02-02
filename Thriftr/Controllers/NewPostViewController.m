@@ -7,9 +7,10 @@
 //
 
 #import "NewPostViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
 #import "JVFloatLabeledTextField.h"
 #import "JVFloatLabeledTextView.h"
+#import "AppConstant.h"
 
 const static CGFloat kJVFieldHeight = 44.0f;
 const static CGFloat kJVFieldHMargin = 10.0f;
@@ -28,6 +29,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"Floating Label Demo", @"");
+        
     }
     return self;
 }
@@ -51,6 +53,9 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     
     
     CGFloat topOffset = 0;
+    CGFloat imageMargin = 10.0f;
+    CGFloat imageSize = (self.view.frame.size.width - imageMargin*5)/4.0f;
+    CGFloat buttonSize = 20.0f;
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
     [self.view setTintColor:[UIColor blueColor]];
@@ -60,14 +65,56 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 #endif
     
     
+    //Image buttons
+    self.selectedImages = [[NSMutableArray alloc] init];
+    self.modifyImages = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < 4; i++){
+        UIImageView *img1 = [[UIImageView alloc] initWithFrame:CGRectMake((imageMargin*(i+1) + imageSize*i), topOffset + imageMargin, imageSize, imageSize)];
+        [img1 setBackgroundColor:RGB(228,228,222)];
+
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(singleTapGestureCaptured:)];
+        [img1 setTag:i];
+        [img1 addGestureRecognizer:singleTap];
+        [img1 setMultipleTouchEnabled:YES];
+        [img1 setUserInteractionEnabled:YES];
+        [self.selectedImages addObject:img1];
+        [self.view addSubview:img1];
+        
+        UIImageView *img1Button = [[UIImageView alloc]
+                                initWithFrame:CGRectMake(img1.frame.origin.x + imageSize - buttonSize,
+                               img1.frame.origin.y + imageSize - buttonSize, buttonSize, buttonSize)];
+        [img1Button setImage:[UIImage imageNamed:@"add-image"] ];
+        [img1Button setBackgroundColor:[UIColor whiteColor]];
+        img1Button.layer.cornerRadius = 10;
+        img1Button.layer.masksToBounds = YES;
+        [self.modifyImages addObject:img1Button];
+        [self.view addSubview:img1Button];
+
+
+    }
+    
+   
+    UITextField *detailsTitle = [[UITextField alloc] initWithFrame:CGRectMake(kJVFieldHMargin, topOffset + imageSize+ imageMargin, self.view.frame.size.width-2*kJVFieldHMargin, kJVFieldHeight)];
+    detailsTitle.text = @"DETAILS";
+    detailsTitle.font =  [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+    detailsTitle.textColor = [UIColor blackColor];
+    detailsTitle.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:detailsTitle];
+    
+    UIView *detailDiv = [[UIView alloc] init];
+    detailDiv.frame = CGRectMake(kJVFieldHMargin, detailsTitle.frame.origin.y + detailsTitle.frame.size.height, self.view.frame.size.width - 2*kJVFieldHMargin, 1.0f);
+    detailDiv.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:0.3f];
+    
+    [self.view addSubview:detailDiv];
     
     
     
-    UIColor *floatingLabelColor = [UIColor brownColor];
+    UIColor *floatingLabelColor = [UIColor blackColor];
     
     JVFloatLabeledTextField *titleField = [[JVFloatLabeledTextField alloc] initWithFrame:
                                            CGRectMake(kJVFieldHMargin,
-                                                      topOffset,
+                                                      detailDiv.frame.origin.y+detailDiv.frame.size.height,
                                                       self.view.frame.size.width - 2 * kJVFieldHMargin,
                                                       kJVFieldHeight)];
     titleField.attributedPlaceholder =
@@ -151,6 +198,83 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     // Dispose of any resources that can be recreated.
 }
 
+-(void) singleTapGestureCaptured: (UIGestureRecognizer *)sender{
+    self.selectedImage = [sender.view tag];
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:nil
+                                  message:nil
+                                  preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction* viewImage = [UIAlertAction
+                         actionWithTitle:@"View Photo"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    UIAlertAction* camera = [UIAlertAction
+                                actionWithTitle:@"Take a Photo"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    
+                                    [alert dismissViewControllerAnimated:YES completion:nil];
+                                    [self promptForCamera];
+                                    
+                                }];
+    UIAlertAction* library = [UIAlertAction
+                             actionWithTitle:@"Choose from Library"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 [self promptForPhotoRoll];
+                                 
+                             }];
+    UIAlertAction* cancel = [UIAlertAction
+                             actionWithTitle:@"Cancel"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+    
+    [alert addAction:viewImage];
+    [alert addAction:camera];
+    [alert addAction:library];
+    [alert addAction:cancel];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
+- (void)promptForCamera {
+    UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+    controller.sourceType = UIImagePickerControllerSourceTypeCamera;
+    controller.delegate = self;
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)promptForPhotoRoll {
+    UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+    controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    controller.delegate = self;
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    UIImageView *currentImage = [self.selectedImages objectAtIndex:self.selectedImage];
+    
+    UIImageView *modifyImage = [self.modifyImages objectAtIndex:self.selectedImage];
+    [modifyImage setHidden:true];
+    currentImage.image = image;
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
