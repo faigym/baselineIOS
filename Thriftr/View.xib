@@ -14,7 +14,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="r0B-f8-5dL">
-            <rect key="frame" x="0.0" y="0.0" width="290" height="666"/>
+            <rect key="frame" x="0.0" y="0.0" width="290" height="651"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ysZ-27-VLg">
@@ -105,17 +105,21 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="centerY" secondItem="ysZ-27-VLg" secondAttribute="centerY" id="6ov-IK-kTE"/>
                 <constraint firstAttribute="centerX" secondItem="ysZ-27-VLg" secondAttribute="centerX" id="B87-3B-cAh"/>
                 <constraint firstItem="ysZ-27-VLg" firstAttribute="top" secondItem="r0B-f8-5dL" secondAttribute="top" constant="81" id="EfA-Xt-lx8"/>
                 <constraint firstAttribute="centerY" secondItem="ysZ-27-VLg" secondAttribute="centerY" id="tPI-lC-C6m"/>
+                <constraint firstAttribute="centerX" secondItem="ysZ-27-VLg" secondAttribute="centerX" id="xTs-LI-zHs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="B87-3B-cAh"/>
                     <exclude reference="EfA-Xt-lx8"/>
+                    <exclude reference="tPI-lC-C6m"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="171.5" y="373"/>
+            <point key="canvasLocation" x="171" y="365.5"/>
         </view>
         <visualEffectView opaque="NO" contentMode="scaleToFill" id="4zi-Os-o6w">
             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>

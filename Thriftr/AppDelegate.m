@@ -13,6 +13,7 @@
 #import "ViewController.h"
 #import "RDVTabBarItem.h"
 #import "AppConstant.h"
+#import "NewPostViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -39,17 +40,12 @@
 - (void)setupViewControllers {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
                                 @"Main" bundle:[NSBundle mainBundle]];
-    UIViewController *firstViewController = [storyboard instantiateViewControllerWithIdentifier:@"newsfeed"];
-    
-
-    UIViewController *firstNavigationController = [[UINavigationController alloc]
-                                                   initWithRootViewController:firstViewController];
     
     UIViewController *secondViewController =  [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     UIViewController *secondNavigationController = [[UINavigationController alloc]
                                                     initWithRootViewController:secondViewController];
     
-    UIViewController *thirdViewController = [storyboard instantiateViewControllerWithIdentifier:@"NewPost"];
+    NewPostViewController *thirdViewController = [NewPostViewController new];
     UIViewController *thirdNavigationController = [[UINavigationController alloc]
                                                    initWithRootViewController:thirdViewController];
     /*
@@ -59,8 +55,8 @@
     
     [self customizeTabBarForController:tabBarController];*/
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:secondNavigationController,
-                                             thirdNavigationController,nil];
+    [self.tabBarController setViewControllers:[NSArray arrayWithObjects:secondNavigationController,
+                                             thirdNavigationController,nil]];
     self.tabBarController.tabBar.translucent = NO;
 
     self.tabBarController.selectedIndex = DEFAULT_TAB;

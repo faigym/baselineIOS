@@ -10,17 +10,42 @@
 #import <QuartzCore/QuartzCore.h>
 #import "GKLParallaxPicturesViewController.h"
 
+
 @implementation ViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = NSLocalizedString(@"Home", @"");
+        
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CGFloat topOffset = 0;
     
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+    [self.view setTintColor:[UIColor blueColor]];
+    
+    topOffset = ([[UIApplication sharedApplication] statusBarFrame].size.height
+                 + self.navigationController.navigationBar.frame.size.height);
+#endif
+    /*
+    self.mySwipeView = [[SwipeView alloc] initWithFrame:CGRectMake(0.0f, topOffset, self.view.frame.size.width, self.view.frame.height)];
+    */
     //configure swipe view
     _swipeView.alignment = SwipeViewAlignmentCenter;
     _swipeView.pagingEnabled = YES;
     _swipeView.itemsPerPage = 1;
     _swipeView.truncateFinalPage = YES;
+    [self.navigationItem setTitle:@"Thriftr"];
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
+    self.tabBarItem.title = @"Home";
 }
 
 - (void)dealloc
@@ -45,7 +70,6 @@
 
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-    NSLog(@"Loading index %i ", index);
 
     	//load new item view instance from nib
         //control events are bound to view controller in nib file

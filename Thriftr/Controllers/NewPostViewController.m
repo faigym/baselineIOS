@@ -28,7 +28,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Floating Label Demo", @"");
+        self.title = NSLocalizedString(@"New Listing", @"");
         
     }
     return self;
@@ -41,7 +41,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     
     
     // Navigation Bar Buttons
-    [self.navigationItem setTitle:@"Title"];
+    [self.navigationItem setTitle:@"New Listing"];
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
     
