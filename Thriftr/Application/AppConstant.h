@@ -57,3 +57,17 @@
 #define		NOTIFICATION_APP_STARTED			@"NCAppStarted"
 #define		NOTIFICATION_USER_LOGGED_IN			@"NCUserLoggedIn"
 #define		NOTIFICATION_USER_LOGGED_OUT		@"NCUserLoggedOut"
+
+#define     LISTING_CLASS_NAME                  @"Listings"
+#define     LISTING_USER_ID                     @"UserId"
+#define     LISTING_USER                        @"User"
+#define     LISTING_TITLE                       @"Title"
+#define     LISTING_PRICE                       @"Price"
+#define     LISTING_CATEGORY                    @"Category"
+#define     LISTING_DESCRIPTION                 @"Description"
+#define     LISTING_IMAGE_1                     @"Image1"
+#define     LISTING_IMAGE_2                     @"Image2"
+#define     LISTING_IMAGE_3                     @"Image3"
+#define     LISTING_IMAGE_4                     @"Image4"
+#define     LISTING_LOCATION                    @"Location"
+

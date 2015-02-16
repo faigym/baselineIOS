@@ -9,9 +9,8 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "NewsfeedTableViewController.h"
-#import <RDVTabBarController/RDVTabBarController.h>
+#import "DEMOLeftMenuViewController.h"
 #import "ViewController.h"
-#import "RDVTabBarItem.h"
 #import "AppConstant.h"
 #import "NewPostViewController.h"
 @interface AppDelegate ()
@@ -26,7 +25,32 @@
     [Parse setApplicationId:@"ieGYHifNmIi0B1xHSFbhTr4bIIk9Dl7gysrYXjI3" clientKey:@"6skcdSV7gYaYmxS5wabcKtOzSXoMpwI2GzWsnonR"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    [self setupViewControllers];
+   // [self setupViewControllers];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIViewController *homeViewController =  [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+    DEMOLeftMenuViewController *leftMenuViewController = [[DEMOLeftMenuViewController alloc] init];
+
+    
+    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
+                                                                    leftMenuViewController:leftMenuViewController
+                                                                   rightMenuViewController:nil];
+    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
+    sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
+    sideMenuViewController.delegate = self;
+    sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+    sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    sideMenuViewController.contentViewShadowOpacity = 0.6;
+    sideMenuViewController.contentViewShadowRadius = 12;
+    sideMenuViewController.contentViewShadowEnabled = YES;
+    self.window.rootViewController = sideMenuViewController;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    return YES;
+    
+    
     [self.window setRootViewController:self.viewController];
     [self.window makeKeyAndVisible];
     

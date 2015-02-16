@@ -20,6 +20,10 @@
 		3022D8321A7EBA3400979A8A /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3022D82D1A7EBA3400979A8A /* JVFloatLabeledTextField.m */; };
 		3022D8331A7EBA3400979A8A /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3022D82F1A7EBA3400979A8A /* JVFloatLabeledTextView.m */; };
 		3022D8341A7EBA3400979A8A /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 3022D8311A7EBA3400979A8A /* NSString+TextDirectionality.m */; };
+		30907F631A91DE8B00E9CC6E /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 30907F5E1A91DE8B00E9CC6E /* RECommonFunctions.m */; };
+		30907F641A91DE8B00E9CC6E /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30907F601A91DE8B00E9CC6E /* RESideMenu.m */; };
+		30907F651A91DE8B00E9CC6E /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30907F621A91DE8B00E9CC6E /* UIViewController+RESideMenu.m */; };
+		30907F6B1A91DF0600E9CC6E /* DEMOLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30907F6A1A91DF0600E9CC6E /* DEMOLeftMenuViewController.m */; };
 		DBC8F6D7D5117698C03DC7AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BCDF60754DC08DE8B755ED /* libPods.a */; };
 		FE0FD8FA1A628E2F0039377F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0FD8F81A628E2F0039377F /* LoginViewController.m */; };
 		FE0FD90B1A628F790039377F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0FD9011A628F780039377F /* AudioToolbox.framework */; };
@@ -76,6 +80,14 @@
 		3022D82F1A7EBA3400979A8A /* JVFloatLabeledTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextView.m; sourceTree = "<group>"; };
 		3022D8301A7EBA3400979A8A /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextDirectionality.h"; sourceTree = "<group>"; };
 		3022D8311A7EBA3400979A8A /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextDirectionality.m"; sourceTree = "<group>"; };
+		30907F5D1A91DE8B00E9CC6E /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		30907F5E1A91DE8B00E9CC6E /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		30907F5F1A91DE8B00E9CC6E /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		30907F601A91DE8B00E9CC6E /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		30907F611A91DE8B00E9CC6E /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		30907F621A91DE8B00E9CC6E /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		30907F691A91DF0600E9CC6E /* DEMOLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOLeftMenuViewController.h; sourceTree = "<group>"; };
+		30907F6A1A91DF0600E9CC6E /* DEMOLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOLeftMenuViewController.m; sourceTree = "<group>"; };
 		7A9EC11DCE0DE71AD0DA7EDF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		82BCDF60754DC08DE8B755ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10C772C8546D2CAD44DCA70 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,8 +110,8 @@
 		FE6368DA1A74721B00BAD7EA /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		FE7479A91A62923F00878EF1 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = SOURCE_ROOT; };
 		FE7479AA1A62923F00878EF1 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = SOURCE_ROOT; };
-		FE8E4DD21A756BCB00CCEBF5 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
-		FE8E4DD31A756BCB00CCEBF5 /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
+		FE8E4DD21A756BCB00CCEBF5 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NewPostViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		FE8E4DD31A756BCB00CCEBF5 /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NewPostViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FE911CD61A6D2A1B00D558D3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
 		FE911CD71A6D2A1B00D558D3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		FE9612161A6CD8AF00DDBEB3 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
@@ -180,6 +192,19 @@
 			path = JVFloatLabeledTextField;
 			sourceTree = "<group>";
 		};
+		30907F5C1A91DE8B00E9CC6E /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				30907F5D1A91DE8B00E9CC6E /* RECommonFunctions.h */,
+				30907F5E1A91DE8B00E9CC6E /* RECommonFunctions.m */,
+				30907F5F1A91DE8B00E9CC6E /* RESideMenu.h */,
+				30907F601A91DE8B00E9CC6E /* RESideMenu.m */,
+				30907F611A91DE8B00E9CC6E /* UIViewController+RESideMenu.h */,
+				30907F621A91DE8B00E9CC6E /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
+			sourceTree = "<group>";
+		};
 		A9178295651F751ADB4A39C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +255,8 @@
 		FE20AD571A7399F700FBE67B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				30907F691A91DF0600E9CC6E /* DEMOLeftMenuViewController.h */,
+				30907F6A1A91DF0600E9CC6E /* DEMOLeftMenuViewController.m */,
 				FE8E4DD21A756BCB00CCEBF5 /* NewPostViewController.h */,
 				FE8E4DD31A756BCB00CCEBF5 /* NewPostViewController.m */,
 				FE911CD61A6D2A1B00D558D3 /* ViewController.h */,
@@ -270,6 +297,7 @@
 		FECC8A521A627D62005B32E2 = {
 			isa = PBXGroup;
 			children = (
+				30907F5C1A91DE8B00E9CC6E /* RESideMenu */,
 				3022D82B1A7EBA3400979A8A /* JVFloatLabeledTextField */,
 				3022D8271A7EB64E00979A8A /* SwipeView */,
 				FECC8A5D1A627D62005B32E2 /* Thriftr */,
@@ -467,12 +495,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3022D8321A7EBA3400979A8A /* JVFloatLabeledTextField.m in Sources */,
+				30907F631A91DE8B00E9CC6E /* RECommonFunctions.m in Sources */,
 				FECC8A641A627D62005B32E2 /* AppDelegate.m in Sources */,
 				3022D8341A7EBA3400979A8A /* NSString+TextDirectionality.m in Sources */,
 				3022D82A1A7EB64E00979A8A /* SwipeView.m in Sources */,
 				FE6368DB1A74721B00BAD7EA /* SignupViewController.m in Sources */,
 				3022D8331A7EBA3400979A8A /* JVFloatLabeledTextView.m in Sources */,
 				FE8E4DD41A756BCB00CCEBF5 /* NewPostViewController.m in Sources */,
+				30907F641A91DE8B00E9CC6E /* RESideMenu.m in Sources */,
 				FE0FD8FA1A628E2F0039377F /* LoginViewController.m in Sources */,
 				FECC8A611A627D62005B32E2 /* main.m in Sources */,
 				FE911CD81A6D2A1B00D558D3 /* ViewController.m in Sources */,
@@ -480,6 +510,8 @@
 				FE9612181A6CD8B000DDBEB3 /* NavigationController.m in Sources */,
 				FE9612331A6CE68800DDBEB3 /* GKLParallaxPicturesViewController.m in Sources */,
 				FECF98661A628070008B4FB3 /* NewsfeedTableViewController.m in Sources */,
+				30907F651A91DE8B00E9CC6E /* UIViewController+RESideMenu.m in Sources */,
+				30907F6B1A91DF0600E9CC6E /* DEMOLeftMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

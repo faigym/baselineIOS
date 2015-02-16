@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "GKLParallaxPicturesViewController.h"
-
+#import "RESideMenu.h"
 
 @implementation ViewController
 
@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     CGFloat topOffset = 0;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage: [UIImage imageNamed: @"menu" ] style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
     [self.view setTintColor:[UIColor blueColor]];

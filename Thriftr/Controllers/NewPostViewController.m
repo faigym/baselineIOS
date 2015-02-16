@@ -8,9 +8,8 @@
 
 #import "NewPostViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "JVFloatLabeledTextField.h"
-#import "JVFloatLabeledTextView.h"
 #import "AppConstant.h"
+#import <Parse/Parse.h>
 
 const static CGFloat kJVFieldHeight = 44.0f;
 const static CGFloat kJVFieldHMargin = 10.0f;
@@ -47,7 +46,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemDone target:self action:nil];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Post" style:UIBarButtonSystemItemDone target:self action:nil];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Post" style:UIBarButtonSystemItemDone target:self action:@selector(createListing)];
     
     
     
@@ -66,6 +65,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     
     
     //Image buttons
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     self.selectedImages = [[NSMutableArray alloc] init];
     self.modifyImages = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < 4; i++){
@@ -112,83 +112,83 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     
     UIColor *floatingLabelColor = [UIColor blackColor];
     
-    JVFloatLabeledTextField *titleField = [[JVFloatLabeledTextField alloc] initWithFrame:
+    self.titleField = [[JVFloatLabeledTextField alloc] initWithFrame:
                                            CGRectMake(kJVFieldHMargin,
                                                       detailDiv.frame.origin.y+detailDiv.frame.size.height,
                                                       self.view.frame.size.width - 2 * kJVFieldHMargin,
                                                       kJVFieldHeight)];
-    titleField.attributedPlaceholder =
+    self.titleField.attributedPlaceholder =
     [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Title", @"")
                                     attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
-    titleField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
-    titleField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
-    titleField.floatingLabelTextColor = floatingLabelColor;
-    titleField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.titleField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
+    self.titleField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+    self.titleField.floatingLabelTextColor = floatingLabelColor;
+    self.titleField.clearButtonMode = UITextFieldViewModeWhileEditing;
     //    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 30.0f, 30.0f)];
     //    titleField.leftView = leftView;
     //    titleField.leftViewMode = UITextFieldViewModeAlways;
-    [self.view addSubview:titleField];
+    [self.view addSubview:self.titleField];
     
     UIView *div1 = [UIView new];
-    div1.frame = CGRectMake(kJVFieldHMargin, titleField.frame.origin.y + titleField.frame.size.height,
+    div1.frame = CGRectMake(kJVFieldHMargin, self.titleField.frame.origin.y + self.titleField.frame.size.height,
                             self.view.frame.size.width - 2 * kJVFieldHMargin, 1.0f);
     div1.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
     [self.view addSubview:div1];
     
-    JVFloatLabeledTextField *priceField = [[JVFloatLabeledTextField alloc] initWithFrame:
+    self.priceField = [[JVFloatLabeledTextField alloc] initWithFrame:
                                            CGRectMake(kJVFieldHMargin,
                                                       div1.frame.origin.y + div1.frame.size.height,
                                                       80.0f,
                                                       kJVFieldHeight)];
-    priceField.attributedPlaceholder =
+    self.priceField.attributedPlaceholder =
     [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Price", @"")
                                     attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
-    priceField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
-    priceField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
-    priceField.floatingLabelTextColor = floatingLabelColor;
-    [self.view addSubview:priceField];
+    self.priceField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
+    self.priceField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+    self.priceField.floatingLabelTextColor = floatingLabelColor;
+    [self.view addSubview:self.priceField];
     
     UIView *div2 = [UIView new];
-    div2.frame = CGRectMake(kJVFieldHMargin + priceField.frame.size.width,
-                            titleField.frame.origin.y + titleField.frame.size.height,
+    div2.frame = CGRectMake(kJVFieldHMargin + self.priceField.frame.size.width,
+                            self.titleField.frame.origin.y + self.titleField.frame.size.height,
                             1.0f, kJVFieldHeight);
     div2.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
     [self.view addSubview:div2];
     
-    JVFloatLabeledTextField *locationField =
+    self.categoryField =
     [[JVFloatLabeledTextField alloc] initWithFrame:
-     CGRectMake(kJVFieldHMargin + kJVFieldHMargin + priceField.frame.size.width + 1.0f,
+     CGRectMake(kJVFieldHMargin + kJVFieldHMargin + self.priceField.frame.size.width + 1.0f,
                 div1.frame.origin.y + div1.frame.size.height,
-                self.view.frame.size.width - 3*kJVFieldHMargin - priceField.frame.size.width - 1.0f,
+                self.view.frame.size.width - 3*kJVFieldHMargin - self.priceField.frame.size.width - 1.0f,
                 kJVFieldHeight)];
     
-    locationField.attributedPlaceholder =
-    [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Specific Location (optional)", @"")
+    self.categoryField.attributedPlaceholder =
+    [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Category", @"")
                                     attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
-    locationField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
-    locationField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
-    locationField.floatingLabelTextColor = floatingLabelColor;
-    [self.view addSubview:locationField];
+    self.categoryField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
+    self.categoryField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+    self.categoryField.floatingLabelTextColor = floatingLabelColor;
+    [self.view addSubview:self.categoryField];
     
     UIView *div3 = [UIView new];
-    div3.frame = CGRectMake(kJVFieldHMargin, priceField.frame.origin.y + priceField.frame.size.height,
+    div3.frame = CGRectMake(kJVFieldHMargin, self.priceField.frame.origin.y + self.priceField.frame.size.height,
                             self.view.frame.size.width - 2*kJVFieldHMargin, 1.0f);
     div3.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
     [self.view addSubview:div3];
     
-    JVFloatLabeledTextView *descriptionField =
+    self.descriptionField =
     [[JVFloatLabeledTextView alloc] initWithFrame:CGRectMake(kJVFieldHMargin,
                                                              div3.frame.origin.y + div3.frame.size.height,
                                                              self.view.frame.size.width - 2*kJVFieldHMargin,
                                                              kJVFieldHeight*3)];
-    descriptionField.placeholder = NSLocalizedString(@"Description", @"");
-    descriptionField.placeholderTextColor = [UIColor darkGrayColor];
-    descriptionField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
-    descriptionField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
-    descriptionField.floatingLabelTextColor = floatingLabelColor;
-    [self.view addSubview:descriptionField];
+    self.descriptionField.placeholder = NSLocalizedString(@"Description", @"");
+    self.descriptionField.placeholderTextColor = [UIColor darkGrayColor];
+    self.descriptionField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
+    self.descriptionField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+    self.descriptionField.floatingLabelTextColor = floatingLabelColor;
+    [self.view addSubview:self.descriptionField];
     
-    [titleField becomeFirstResponder];
+    [self.titleField becomeFirstResponder];
     
 }
 
@@ -275,6 +275,45 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) createListing {
+    if([self.descriptionField.text length] == 0 ||
+       [self.priceField.text length] == 0 ||
+       [self.titleField.text length] == 0 ||
+       [self.categoryField.text length] == 0 ){
+        //handle them errors
+    }
+    PFObject *listing = [PFObject objectWithClassName:LISTING_CLASS_NAME];
+    PFUser *user = [PFUser currentUser];
+    listing[LISTING_TITLE] = self.titleField.text;
+    listing[LISTING_PRICE] = self.priceField.text;
+    listing[LISTING_DESCRIPTION] = self.descriptionField.text;
+    listing[LISTING_CATEGORY] = self.categoryField.text;
+    listing[LISTING_USER] = [user username];
+    listing[LISTING_USER_ID] = [user objectId];
+    int index = 1;
+    for (UIImage *image in self.selectedImages){
+        NSString *imageKey = [@"Image" stringByAppendingString:[@(index) stringValue]];
+        NSString *imageName = [@"image" stringByAppendingString:[@(index) stringValue]];
+        imageName = [imageName stringByAppendingString:@".png"];
+        NSData *imageData = UIImagePNGRepresentation(image);
+        PFFile *imageFile = [PFFile fileWithName:imageName data:imageData];
+        listing[imageKey]= imageFile;
+        index++;
+        
+    }
+    //save pictures
+    
+    [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if(succeeded){
+            
+        }
+        else{
+            
+        }
+    }];
+    
 }
 
 @end
