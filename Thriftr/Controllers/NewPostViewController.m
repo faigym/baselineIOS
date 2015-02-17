@@ -9,7 +9,9 @@
 #import "NewPostViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AppConstant.h"
+#import "ViewController.h"
 #import <Parse/Parse.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 const static CGFloat kJVFieldHeight = 44.0f;
 const static CGFloat kJVFieldHMargin = 10.0f;
@@ -37,7 +39,6 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     
     // Navigation Bar Buttons
     [self.navigationItem setTitle:@"New Listing"];
@@ -278,11 +279,14 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 }
 
 -(void) createListing {
+
     if([self.descriptionField.text length] == 0 ||
        [self.priceField.text length] == 0 ||
        [self.titleField.text length] == 0 ||
        [self.categoryField.text length] == 0 ){
         //handle them errors
+        [self displayAlertView:@"Please provide a complete item description." withTitle: @"Error"];
+        return;
     }
     PFObject *listing = [PFObject objectWithClassName:LISTING_CLASS_NAME];
     PFUser *user = [PFUser currentUser];
@@ -293,27 +297,54 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     listing[LISTING_USER] = [user username];
     listing[LISTING_USER_ID] = [user objectId];
     int index = 1;
-    for (UIImage *image in self.selectedImages){
+    for (UIImageView *imageView in self.selectedImages){
         NSString *imageKey = [@"Image" stringByAppendingString:[@(index) stringValue]];
         NSString *imageName = [@"image" stringByAppendingString:[@(index) stringValue]];
         imageName = [imageName stringByAppendingString:@".png"];
-        NSData *imageData = UIImagePNGRepresentation(image);
-        PFFile *imageFile = [PFFile fileWithName:imageName data:imageData];
-        listing[imageKey]= imageFile;
+        NSData *imageData = UIImagePNGRepresentation(imageView.image);
+        if(imageData != nil) {
+            PFFile *imageFile = [PFFile fileWithName:imageName data:imageData];
+            listing[imageKey]= imageFile;
+        }
         index++;
         
     }
     //save pictures
-    
-    [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if(succeeded){
-            
-        }
-        else{
-            
-        }
-    }];
+    [SVProgressHUD show];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // time-consuming task
+        
+        [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
+            if(succeeded){
+                [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[ [ViewController alloc] initWithNibName:@"ViewController" bundle:nil]]
+                                                             animated:YES];
+            }
+            else{
+                [self displayAlertView:[error localizedDescription] withTitle: @"Something went wrong."];
+            }
+        }];
+
+    });
+
     
 }
+
+-(void) displayAlertView: (NSString *) message withTitle: (NSString *)title {
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:title andMessage:message];
+    [alertView addButtonWithTitle:@"OK"
+                             type:SIAlertViewButtonTypeDefault
+                          handler:^(SIAlertView *alertView) {
+                          }];
+    alertView.titleColor = [UIColor redColor];
+    alertView.cornerRadius = 10;
+    alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
+    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    [alertView show];
+}
+
+
 
 @end

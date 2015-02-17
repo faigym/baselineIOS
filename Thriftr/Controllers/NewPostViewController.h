@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "JVFloatLabeledTextField.h"
 #import "JVFloatLabeledTextView.h"
+#import <SIAlertView/SIAlertView.h>
+#import "RESideMenu.h"
 @interface NewPostViewController : UIViewController
 @property (nonatomic,assign) NSInteger selectedImage;
 @property (strong, atomic) NSMutableArray *selectedImages;
