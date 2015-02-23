@@ -301,7 +301,8 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
         NSString *imageKey = [@"Image" stringByAppendingString:[@(index) stringValue]];
         NSString *imageName = [@"image" stringByAppendingString:[@(index) stringValue]];
         imageName = [imageName stringByAppendingString:@".png"];
-        NSData *imageData = UIImagePNGRepresentation(imageView.image);
+        UIImage *resizedImage = [self resizeImage:imageView.image toWidth:self.view.frame.size.width andHeight:390.0f];
+        NSData *imageData = UIImagePNGRepresentation(resizedImage);
         if(imageData != nil) {
             PFFile *imageFile = [PFFile fileWithName:imageName data:imageData];
             listing[imageKey]= imageFile;
@@ -345,6 +346,16 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     [alertView show];
 }
 
+- (UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height {
+    CGSize newSize = CGSizeMake(width, height);
+    CGRect newRect = CGRectMake(0, 0, width, height);
+    UIGraphicsBeginImageContext(newSize);
+    [image drawInRect:newRect];
+    UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return resizedImage;
+}
 
 
 @end

@@ -28,7 +28,7 @@
    // [self setupViewControllers];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    UIViewController *homeViewController =  [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    UIViewController *homeViewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     DEMOLeftMenuViewController *leftMenuViewController = [[DEMOLeftMenuViewController alloc] init];
 
@@ -60,7 +60,7 @@
 }
 
 #pragma mark - Methods
-
+/*
 - (void)setupViewControllers {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
                                 @"Main" bundle:[NSBundle mainBundle]];
@@ -72,12 +72,12 @@
     NewPostViewController *thirdViewController = [NewPostViewController new];
     UIViewController *thirdNavigationController = [[UINavigationController alloc]
                                                    initWithRootViewController:thirdViewController];
-    /*
+    
     RDVTabBarController *tabBarController = [[RDVTabBarController alloc] init];
     [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController, thirdNavigationController]];
     self.viewController = tabBarController;
     
-    [self customizeTabBarForController:tabBarController];*/
+    [self customizeTabBarForController:tabBarController];
     self.tabBarController = [[UITabBarController alloc] init];
     [self.tabBarController setViewControllers:[NSArray arrayWithObjects:secondNavigationController,
                                              thirdNavigationController,nil]];
@@ -88,7 +88,7 @@
     self.viewController = self.tabBarController;
 
     
-  }
+  }*/
 /*
 - (void)customizeTabBarForController:(RDVTabBarController *)tabBarController {
     UIImage *finishedImage = [UIImage imageNamed:@"tabbar_selected_background"];

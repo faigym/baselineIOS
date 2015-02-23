@@ -8,6 +8,8 @@
             <connections>
                 <outlet property="avatar" destination="Rxx-WM-cIS" id="QLf-dP-N3d"/>
                 <outlet property="background" destination="ysZ-27-VLg" id="SSX-e4-v34"/>
+                <outlet property="itemDetails" destination="9Eg-Du-Oln" id="Ko7-mV-HyW"/>
+                <outlet property="itemTitle" destination="HaS-PZ-DE8" id="2Dy-WQ-aZg"/>
                 <outlet property="mainImageView" destination="ASR-8T-nJd" id="EPa-0d-Qk5"/>
                 <outlet property="price" destination="X6b-Ba-9eE" id="Xui-0l-3xa"/>
             </connections>
@@ -42,7 +44,7 @@
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bmwpic" translatesAutoresizingMaskIntoConstraints="NO" id="ASR-8T-nJd">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ASR-8T-nJd">
                             <rect key="frame" x="0.0" y="8" width="275" height="334"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="394" id="CfL-0t-X89"/>
@@ -132,7 +134,6 @@
         </visualEffectView>
     </objects>
     <resources>
-        <image name="bmwpic" width="3072" height="2304"/>
         <image name="testUser" width="1000" height="1000"/>
     </resources>
 </document>
