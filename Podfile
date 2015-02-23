@@ -2,3 +2,5 @@
 pod 'RDVTabBarController'
 pod 'SIAlertView'
 pod 'SVProgressHUD'
+pod 'LruCache'
+pod 'LNBRippleEffect'

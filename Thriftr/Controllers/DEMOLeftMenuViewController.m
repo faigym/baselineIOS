@@ -13,7 +13,8 @@
 @interface DEMOLeftMenuViewController ()
 
 @property (strong, readwrite, nonatomic) UITableView *tableView;
-
+@property (strong, nonatomic) UIView *homeView;
+@property (strong, nonatomic) UIView *listingView;
 @end
 
 @implementation DEMOLeftMenuViewController
@@ -46,12 +47,17 @@
     
     switch (indexPath.row) {
         case 0:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[ [ViewController alloc] initWithNibName:@"ViewController" bundle:nil]]
+            if(!self.homeView){
+                self.homeView = [[UINavigationController alloc] initWithRootViewController:[ [ViewController alloc] initWithNibName:@"ViewController" bundle:nil]];
+            }
+            [self.sideMenuViewController setContentViewController:self.homeView
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 1:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[NewPostViewController new]]
+            self.listingView = [NewPostViewController new];
+            
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:self.listingView]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;

@@ -20,6 +20,8 @@
 		3022D8321A7EBA3400979A8A /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3022D82D1A7EBA3400979A8A /* JVFloatLabeledTextField.m */; };
 		3022D8331A7EBA3400979A8A /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3022D82F1A7EBA3400979A8A /* JVFloatLabeledTextView.m */; };
 		3022D8341A7EBA3400979A8A /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 3022D8311A7EBA3400979A8A /* NSString+TextDirectionality.m */; };
+		308F80491A9AA29600C64BA9 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 308F80481A9AA29600C64BA9 /* ImageCache.m */; };
+		308F804D1A9AB87700C64BA9 /* ItemDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308F804C1A9AB87700C64BA9 /* ItemDetail.xib */; };
 		30907F631A91DE8B00E9CC6E /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 30907F5E1A91DE8B00E9CC6E /* RECommonFunctions.m */; };
 		30907F641A91DE8B00E9CC6E /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30907F601A91DE8B00E9CC6E /* RESideMenu.m */; };
 		30907F651A91DE8B00E9CC6E /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30907F621A91DE8B00E9CC6E /* UIViewController+RESideMenu.m */; };
@@ -80,6 +82,9 @@
 		3022D82F1A7EBA3400979A8A /* JVFloatLabeledTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextView.m; sourceTree = "<group>"; };
 		3022D8301A7EBA3400979A8A /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextDirectionality.h"; sourceTree = "<group>"; };
 		3022D8311A7EBA3400979A8A /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextDirectionality.m"; sourceTree = "<group>"; };
+		308F80451A9A8EBC00C64BA9 /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
+		308F80481A9AA29600C64BA9 /* ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
+		308F804C1A9AB87700C64BA9 /* ItemDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetail.xib; sourceTree = SOURCE_ROOT; };
 		30907F5D1A91DE8B00E9CC6E /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		30907F5E1A91DE8B00E9CC6E /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		30907F5F1A91DE8B00E9CC6E /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
@@ -244,6 +249,7 @@
 		FE20AD561A7399EE00FBE67B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				308F804C1A9AB87700C64BA9 /* ItemDetail.xib */,
 				3022D8211A7EB5E600979A8A /* LaunchScreen.xib */,
 				3022D8231A7EB5E600979A8A /* Main.storyboard */,
 				3022D81D1A7EB5A900979A8A /* View.xib */,
@@ -320,6 +326,8 @@
 		FECC8A5D1A627D62005B32E2 /* Thriftr */ = {
 			isa = PBXGroup;
 			children = (
+				308F80481A9AA29600C64BA9 /* ImageCache.m */,
+				308F80451A9A8EBC00C64BA9 /* ImageCache.h */,
 				FE20AD581A739A1500FBE67B /* Login */,
 				FE20AD571A7399F700FBE67B /* Controllers */,
 				FE20AD561A7399EE00FBE67B /* Views */,
@@ -442,6 +450,7 @@
 				3022D8251A7EB5E600979A8A /* LaunchScreen.xib in Resources */,
 				3022D8261A7EB5E600979A8A /* Main.storyboard in Resources */,
 				3022D81F1A7EB5A900979A8A /* View.xib in Resources */,
+				308F804D1A9AB87700C64BA9 /* ItemDetail.xib in Resources */,
 				3022D8201A7EB5A900979A8A /* ViewController.xib in Resources */,
 				FECC8A6C1A627D62005B32E2 /* Images.xcassets in Resources */,
 			);
@@ -497,6 +506,7 @@
 				3022D8321A7EBA3400979A8A /* JVFloatLabeledTextField.m in Sources */,
 				30907F631A91DE8B00E9CC6E /* RECommonFunctions.m in Sources */,
 				FECC8A641A627D62005B32E2 /* AppDelegate.m in Sources */,
+				308F80491A9AA29600C64BA9 /* ImageCache.m in Sources */,
 				3022D8341A7EBA3400979A8A /* NSString+TextDirectionality.m in Sources */,
 				3022D82A1A7EB64E00979A8A /* SwipeView.m in Sources */,
 				FE6368DB1A74721B00BAD7EA /* SignupViewController.m in Sources */,

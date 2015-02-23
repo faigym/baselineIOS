@@ -45,10 +45,12 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemDone target:self action:nil];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemDone target:self action:@selector(exitNewPost)];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Post" style:UIBarButtonSystemItemDone target:self action:@selector(createListing)];
+  
     
+    self.isImagePresent = [[NSMutableSet alloc] init];
     
     
     
@@ -266,7 +268,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     UIImageView *currentImage = [self.selectedImages objectAtIndex:self.selectedImage];
-    
+    [self.isImagePresent addObject: [NSString stringWithFormat:@"%d",self.selectedImage]];
     UIImageView *modifyImage = [self.modifyImages objectAtIndex:self.selectedImage];
     [modifyImage setHidden:true];
     currentImage.image = image;
@@ -296,18 +298,21 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     listing[LISTING_CATEGORY] = self.categoryField.text;
     listing[LISTING_USER] = [user username];
     listing[LISTING_USER_ID] = [user objectId];
-    int index = 1;
+    
+    int index = 0;
     for (UIImageView *imageView in self.selectedImages){
-        NSString *imageKey = [@"Image" stringByAppendingString:[@(index) stringValue]];
-        NSString *imageName = [@"image" stringByAppendingString:[@(index) stringValue]];
-        imageName = [imageName stringByAppendingString:@".png"];
-        UIImage *resizedImage = [self resizeImage:imageView.image toWidth:self.view.frame.size.width andHeight:390.0f];
-        NSData *imageData = UIImagePNGRepresentation(resizedImage);
-        if(imageData != nil) {
+        if([self.isImagePresent containsObject:[NSString stringWithFormat:@"%d",index]]) {
+            NSString *imageKey = [@"Image" stringByAppendingString:[@(index+1) stringValue]];
+            NSString *imageName = [@"image" stringByAppendingString:[@(index+1) stringValue]];
+            imageName = [imageName stringByAppendingString:@".png"];
+            UIImage *resizedImage = [self resizeImage:imageView.image toWidth:self.view.frame.size.width andHeight:390.0f];
+            NSData *imageData = UIImagePNGRepresentation(resizedImage);
+
             PFFile *imageFile = [PFFile fileWithName:imageName data:imageData];
             listing[imageKey]= imageFile;
+            
+            index++;
         }
-        index++;
         
     }
     //save pictures
@@ -320,8 +325,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
                 [SVProgressHUD dismiss];
             });
             if(succeeded){
-                [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[ [ViewController alloc] initWithNibName:@"ViewController" bundle:nil]]
-                                                             animated:YES];
+                [self exitNewPost];
             }
             else{
                 [self displayAlertView:[error localizedDescription] withTitle: @"Something went wrong."];
@@ -355,6 +359,10 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     UIGraphicsEndImageContext();
     
     return resizedImage;
+}
+
+-(void) exitNewPost {
+    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[ [ViewController alloc] initWithNibName:@"ViewController" bundle:nil]] animated:YES];
 }
 
 

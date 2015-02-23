@@ -24,6 +24,8 @@
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 
+@property (weak, nonatomic) IBOutlet UILabel *listingTitle;
+
 
 @property (nonatomic, strong) UIWebView *webView;
 
