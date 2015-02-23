@@ -7,7 +7,7 @@
 //
 
 #import "DEMOLeftMenuViewController.h"
-#import "ViewController.h"
+#import "FirstController.h"
 #import "NewPostViewController.h"
 
 @interface DEMOLeftMenuViewController ()
@@ -48,9 +48,9 @@
     switch (indexPath.row) {
         case 0:
             if(!self.homeView){
-                self.homeView = [[UINavigationController alloc] initWithRootViewController:[ [ViewController alloc] initWithNibName:@"ViewController" bundle:nil]];
+                self.homeView = [FirstController new];
             }
-            [self.sideMenuViewController setContentViewController:self.homeView
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:self.homeView]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;

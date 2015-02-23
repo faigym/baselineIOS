@@ -9,7 +9,7 @@
 #import "NewPostViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AppConstant.h"
-#import "ViewController.h"
+#import "FirstController.h"
 #import <Parse/Parse.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 
@@ -362,7 +362,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 }
 
 -(void) exitNewPost {
-    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[ [ViewController alloc] initWithNibName:@"ViewController" bundle:nil]] animated:YES];
+    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[ FirstController new]] animated:YES];
 }
 
 

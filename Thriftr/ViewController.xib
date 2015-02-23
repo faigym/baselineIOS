@@ -232,7 +232,6 @@
 						<string key="itemTitle">UILabel</string>
 						<string key="mainImageView">UIImageView</string>
 						<string key="price">UILabel</string>
-						<string key="swipeView">SwipeView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="avatar">
@@ -258,10 +257,6 @@
 						<object class="IBToOneOutletInfo" key="price">
 							<string key="name">price</string>
 							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="swipeView">
-							<string key="name">swipeView</string>
-							<string key="candidateClassName">SwipeView</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">

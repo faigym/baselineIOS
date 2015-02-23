@@ -8,11 +8,9 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import "NewsfeedTableViewController.h"
 #import "DEMOLeftMenuViewController.h"
-#import "ViewController.h"
+#import "FirstController.h"
 #import "AppConstant.h"
-#import "NewPostViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -27,8 +25,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
    // [self setupViewControllers];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    UIViewController *homeViewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    UIViewController *homeViewController = [FirstController new];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     DEMOLeftMenuViewController *leftMenuViewController = [[DEMOLeftMenuViewController alloc] init];
 
